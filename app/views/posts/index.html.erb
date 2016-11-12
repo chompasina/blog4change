@@ -1,17 +1,19 @@
 <div class="form-horizontal">
   
 <h4><%= link_to "Create new post", new_post_path %></h4>
+<button type="button" name="drafts" id="drafts-button">View Drafts</button>
+<button type="button" name="published" id="published-button">View Published Posts</button>
 <br>
 
 <h2>All Posts</h2><br>
 <div id="post-list">
   <% @posts.each do |post| %>
-    <% if post.status == "published" %>
+    <div class="post <%=post.status%>">
       <h3><%= post.title %> by <%= post.author %></h3>
       <p><em>Created at <%= post.created_at %></em></p>
       <p> <%= post.body %> </p>
+    </div>
       <br>
-    <% end %>
   <% end %>
 
 
