@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :posts
+      resources :posts do
+        get '/:id/comments', on: :collection, to: "posts/comments#show"
+      end
     end
   end
   
