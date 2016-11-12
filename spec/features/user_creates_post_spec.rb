@@ -12,7 +12,12 @@ RSpec.feature "User can create a post", type: :feature do
     fill_in "Author", with: "Tommasina"
     fill_in "Title", with: "My wonderful post"
     fill_in "Body", with: "Yada yada yada"
+    check "status"
     
     click_button "Create Post"
+    expect(page).to have_content ("Tommasina")
+    expect(page).to have_content ("My wonderful post")
+    expect(page).to have_content ("Yada yada yada")
+    expect(current_path).to eq(root_path)
   end
 end

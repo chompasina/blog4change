@@ -1,4 +1,16 @@
 <div class="form-horizontal">
   
 <h4><%= link_to "Create new post", new_post_path %></h4>
+<br>
+
+<h2>All Posts</h2><br>
+<div id="post-list">
+  <% @posts.each do |post| %>
+    <h3><%= post.title %> by <%= post.author %></h3>
+    <p><em>Created at <%= post.created_at %></em></p>
+    <p> <%= post.body %> </p>
+    <br>
+  <% end %>
+
+
 </div>

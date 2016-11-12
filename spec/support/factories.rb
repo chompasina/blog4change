@@ -1,3 +1,7 @@
 FactoryGirl.define do
-  # <factories for each model go here>
+  factory :post do
+    title "My title"
+    body "My body"
+    author "My author"
+  end
 end
