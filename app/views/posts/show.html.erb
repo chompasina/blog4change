@@ -5,10 +5,10 @@
 </p>
 
 Add a comment: 
-<%= form_for(@comments) do |f| %>
+<%= form_for(@comment) do |f| %>
     <%= f.label :author %>
     <%= f.text_field :author%>
-  
+    <%= hidden_field_tag :post_id, @post.id %>
     <%= f.label :body %>
     <%= f.text_area :body %>
     <%= f.submit %>

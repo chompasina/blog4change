@@ -2,7 +2,7 @@ $(document).ready(function(){
   viewPublished()
   viewDrafts();
   viewDefault();
-  // addComment();
+  addComment();
 })
 
 function viewDefault(){
@@ -42,13 +42,16 @@ function viewPublished(){
   })
 }
 
-// function addComment(){
-//   $('.comment-button').on('click', function(e){
-//     $('.post-body').append(
-//       "<div class='comment' data-id='" +
-//       post.id +
-//       "'><h6>Add your comment below: "+
-//       
-//     )
-//   })
-// }
+function addComment(){
+  $('.comment-button').on('click', function(e){
+    debugger;
+    $('.post-body').append(
+      "<br><div class='comment' data-id='" +
+      $(this).data('id') +
+      "'><h6>Add your comment below:</h6> "+
+      "<form class='comment-form'>Name:<input type='text' name='name'><br>Comment:<input type='text-area' name='comment-field'><br><input type='submit' value='Submit'>" +
+      "</form></div>"
+    );
+    }    
+  )
+}
