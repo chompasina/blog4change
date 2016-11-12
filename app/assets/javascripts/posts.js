@@ -2,6 +2,7 @@ $(document).ready(function(){
   viewPublished()
   viewDrafts();
   viewDefault();
+  // addComment();
 })
 
 function viewDefault(){
@@ -37,6 +38,17 @@ function viewPublished(){
       } else {
         $(this).hide()
       }
-  })
+    })
   })
 }
+
+// function addComment(){
+//   $('.comment-button').on('click', function(e){
+//     $('.post-body').append(
+//       "<div class='comment' data-id='" +
+//       post.id +
+//       "'><h6>Add your comment below: "+
+//       
+//     )
+//   })
+// }

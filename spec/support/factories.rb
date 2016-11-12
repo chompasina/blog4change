@@ -1,11 +1,16 @@
 FactoryGirl.define do
   factory :post do
-    title 
+    title "string"
     body "My body"
     author "My author"
   end
   
-  sequence :title do |n|
-    "Title_#{n}"
+  factory :comment do
+    body "My comment"
+    author "Comment author"
   end
+  
+  # sequence :title do |n|
+  #   "Title_#{n}"
+  # end
 end
