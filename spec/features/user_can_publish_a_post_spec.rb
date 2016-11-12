@@ -27,9 +27,8 @@ RSpec.describe "User can publish a post", type: :feature do
     
     click_button "Create Post"
     expect(current_path).to eq(root_path)
-    save_and_open_page
-    expect(page).to_not have_content ("Secret")
-    expect(page).to_not have_content ("My hidden post")
-    expect(page).to_not have_content ("Shh Yada yada yada")
+    within('div.post') do
+      expect(page).to have_no_selector('.published')
+    end
   end
 end

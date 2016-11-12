@@ -7,7 +7,7 @@ RSpec.describe "User can see drafts", type: :feature do
     visit root_path
     click_button "View Drafts"
     
-    expect(page).to have_content("My title")
+    expect(page).to have_content("Title_1")
     expect(page).to have_content("My body")
     expect(page).to have_content("My author")
     expect(page).to have_button("View Published Posts")
