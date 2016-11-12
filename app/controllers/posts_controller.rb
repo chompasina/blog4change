@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      check_published?
+      check_status?
       flash[:alert] = "Post created"
       session[:post_id] = @post.id
       redirect_to root_path
@@ -22,7 +22,10 @@ class PostsController < ApplicationController
   
   private
   
-  def check_published?
+  def check_status?
+    if params['status'] == "1"
+      @post.update(status: "published")
+    end
   end
   
   def post_params
